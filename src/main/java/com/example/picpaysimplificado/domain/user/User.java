@@ -120,6 +120,21 @@ public class User {
 		this.document = data.document();
 		
 	}
+
+	public User(Long id, String fistName, String lastName, String document, String email, String password,
+			BigDecimal balance, UserType userType) {
+		super();
+		Id = id;
+		this.fistName = fistName;
+		this.lastName = lastName;
+		this.document = document;
+		this.email = email;
+		this.password = password;
+		this.balance = balance;
+		this.userType = userType;
+	}
+	
+	
 	
 	
 }
