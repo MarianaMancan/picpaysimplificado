@@ -1,6 +1,7 @@
 package com.example.picpaysimplificado.domain.transaction;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import com.example.picpaysimplificado.domain.user.User;
@@ -14,11 +15,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity(name="transactions")
 @Table(name="transactions")
 @AllArgsConstructor
 @EqualsAndHashCode(of="id")
+@NoArgsConstructor
 public class Transaction {
 
 	@Id
@@ -35,7 +38,7 @@ public class Transaction {
 	@JoinColumn(name="receiver_id")
 	private User receiver;
 	
-	private LocalTime timestamp;
+	private LocalDateTime timestamp;
 
 	public Long getId() {
 		return id;
@@ -69,11 +72,11 @@ public class Transaction {
 		this.receiver = receiver;
 	}
 
-	public LocalTime getTimestamp() {
+	public LocalDateTime getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(LocalTime timestamp) {
+	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
 	}
 	

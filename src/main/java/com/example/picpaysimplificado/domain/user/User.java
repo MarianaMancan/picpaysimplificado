@@ -2,7 +2,9 @@ package com.example.picpaysimplificado.domain.user;
 
 import java.math.BigDecimal;
 
+import org.hibernate.dialect.Database;
 
+import com.example.picpaysimplificado.dtos.UserDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -103,6 +105,21 @@ public class User {
 	}
 	
 	
+	
+	public User() {
+		super();
+	}
+
+	public  User(UserDTO data) {
+		this.fistName = data.firstName();
+		this.lastName = data.lastName();
+		this.balance = data.balance();
+		this.userType = data.usertype();
+		this.password = data.password();
+		this.email = data.email();
+		this.document = data.document();
+		
+	}
 	
 	
 }
